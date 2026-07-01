@@ -1,43 +1,48 @@
-# SecureVault - Professional Password Manager 
+#  SecureVault - Advanced AES-Encrypted Password Manager
 
-SecureVault is a secure web application built with **Python (Flask)** and **SQLite**. It allows users to store and manage their digital credentials using industry-standard **AES-128 (Fernet)** encryption.
+SecureVault is a production-grade password management web application built with **Python (Flask)** and **SQLite**. This project demonstrates a "Zero-Knowledge" security architecture where sensitive data is encrypted using **AES-128 (Fernet)** before being stored in the database.
 
-## Features
-- **AES-128 Encryption:** All stored passwords are encrypted using authenticated encryption (Fernet).
-- **Zero-Knowledge Principle:** The encryption key is derived from the Master Password at runtime and never stored in the database.
-- **Master Password Verification:** Users must re-enter their master password to "Reveal" any saved credential.
-- **Secure Hashing:** Authentication is handled via `scrypt` hashing with unique salts for every user.
-- **Modern UI:** Responsive "Glassmorphism" dashboard built with Bootstrap 5.
+---
 
-## Technical Stack
+##  Key Features
+- **Zero-Knowledge Security:** Encryption keys are derived from the Master Password at runtime and are never stored in the database.
+- **AES-128 Encryption:** Utilizes the Python Cryptography library for robust, authenticated encryption.
+- **Step-Up Authentication:** Requires a Master Password confirmation before revealing sensitive credentials.
+- **Secure Hashing:** Protects login credentials using `scrypt` hashing with unique user salts.
+- **Modern UI:** Responsive "Glassmorphism" dashboard designed with Bootstrap 5.
+
+---
+
+##  Technical Stack
 - **Backend:** Python 3.12, Flask, Flask-SQLAlchemy
 - **Security:** Cryptography (Fernet), Werkzeug Security
 - **Database:** SQLite
 - **Frontend:** HTML5, CSS3, Bootstrap 5
 
-## Installation & Setup
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/secure-vault.git
-   cd secure-vault
+---
 
-2. **Set up a Virtual Environment**:
-`bash
+##  Installation & Setup
+
+1. Clone the repository
+```bash
+git clone https://github.com/suprasupra598/secure-vault.git
+cd secure-vault
+2. Set up a Virtual Environment
 python -m venv venv
 # Windows:
 venv\Scripts\activate
 # Mac/Linux:
 source venv/bin/activate
-3. **Install Dependencies**:
-Bash
+3. Install Dependencies
 pip install -r requirements.txt
-4. **Environment Variables**:
-Create a .env file and add:
-SECRET_KEY=your_random_secret_key
-5. **Run the Application**:
-Bash
+4. Configure Environment Variables
+Create a file named .env in the root directory and add your secret key:
+SECRET_KEY=your_random_secret_key_here
+5. Run the Application
 python run.py
-## Security Overview
-This project was developed for a College Project. It emphasizes secure coding practices including CSRF protection, SQL injection prevention (via ORM), and secure key derivation using PBKDF2.
 
-   
+**Security Overview**
+Developed as a Final Year College Project, SecureVault emphasizes industry-standard security practices:
+CSRF Protection: Implemented via Flask-WTF to prevent cross-site request forgery.
+SQL Injection Prevention: All database operations use SQLAlchemy ORM to sanitize inputs.
+Key Derivation: Uses PBKDF2 with 100,000 iterations to derive encryption keys from user passwords.
