@@ -1,0 +1,119 @@
+/* SecureVault - Premium Glassmorphism Theme */
+
+:root {
+    --primary-cyan: #0dcaf0;
+    --dark-bg: #0f111a;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-white: #ffffff;
+    --text-muted: #b0b0b0;
+}
+
+body {
+    background: radial-gradient(circle at top right, #1e2235, #0f111a);
+    background-attachment: fixed;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: var(--text-white);
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* CLASSY UI FIX: Force all labels to be pure white and bold */
+label, .form-label {
+    color: var(--text-white) !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Glassmorphism Card Style */
+.card {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 20px !important;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    border-color: var(--primary-cyan) !important;
+}
+
+/* Premium Inputs */
+.form-control {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: var(--text-white) !important;
+    border-radius: 10px !important;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border-color: var(--primary-cyan) !important;
+    box-shadow: 0 0 15px rgba(13, 202, 240, 0.3) !important;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #666 !important;
+}
+
+/* Classy Navbar */
+.navbar {
+    background: rgba(15, 17, 26, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--primary-cyan) !important;
+    text-transform: uppercase;
+}
+
+/* Professional Cyan Buttons */
+.btn-info {
+    background: linear-gradient(135deg, #0dcaf0, #0091ad) !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: 700 !important;
+    padding: 12px 25px;
+    border-radius: 10px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease !important;
+}
+
+.btn-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(13, 202, 240, 0.4);
+    background: #ffffff !important;
+}
+
+.btn-outline-danger {
+    border-radius: 8px !important;
+    font-weight: 600;
+}
+
+/* Alerts / Flash Messages */
+.alert {
+    border-radius: 12px;
+    background: rgba(13, 202, 240, 0.1);
+    border: 1px solid var(--primary-cyan);
+    color: var(--text-white);
+    backdrop-filter: blur(5px);
+}
+
+/* Dashbaord Search Bar */
+.search-container input {
+    border-radius: 30px !important;
+    padding-left: 25px;
+}

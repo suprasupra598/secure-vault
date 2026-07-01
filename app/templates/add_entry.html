@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 card p-4">
+        <h4 class="mb-3 text-info">Add Credential</h4>
+        <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <div class="mb-3">
+                <label>Website</label>
+                <input type="text" name="website" class="form-control" placeholder="example.com" required>
+            </div>
+            <div class="mb-3">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="text" name="password" id="pass" class="form-control" value="{{ suggested }}" required>
+                <small class="text-muted">Generated a secure one for you.</small>
+            </div>
+            <button type="submit" class="btn btn-info w-100">Encrypt & Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

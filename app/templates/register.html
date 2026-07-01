@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow-lg p-4">
+            <div class="text-center mb-4">
+                <h2 class="text-info">Create Account</h2>
+                <p class="text-muted">Start securing your passwords today.</p>
+            </div>
+            
+            <form method="POST">
+                <!-- CSRF Token for Security -->
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="Choose a unique username" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Master Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Minimum 8 characters" required>
+                    <div class="form-text text-muted">
+                        This password encrypts your vault. If lost, it cannot be recovered.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info w-100 fw-bold mt-3">Register Now</button>
+            </form>
+            
+            <div class="text-center mt-4">
+                <p>Already have an account? <a href="{{ url_for('auth.login') }}" class="text-info text-decoration-none">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
