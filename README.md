@@ -28,6 +28,7 @@ SecureVault is a production-grade password management web application built with
 git clone https://github.com/suprasupra598/secure-vault.git
 cd secure-vault
 2. Set up a Virtual Environment
+```bash
 python -m venv venv
 # Windows:
 venv\Scripts\activate
