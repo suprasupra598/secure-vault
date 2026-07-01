@@ -24,26 +24,34 @@ SecureVault is a production-grade password management web application built with
 ##  Installation & Setup
 
 1. Clone the repository
-```bash
+
 git clone https://github.com/suprasupra598/secure-vault.git
 cd secure-vault
+
 2. Set up a Virtual Environment
-```bash
+
 python -m venv venv
 # Windows:
 venv\Scripts\activate
 # Mac/Linux:
 source venv/bin/activate
+
 3. Install Dependencies
+
 pip install -r requirements.txt
+
 4. Configure Environment Variables
+
 Create a file named .env in the root directory and add your secret key:
+
 SECRET_KEY=your_random_secret_key_here
+
 5. Run the Application
+
 python run.py
 
 **Security Overview**
-Developed as a Final Year College Project, SecureVault emphasizes industry-standard security practices:
+Developed as a College Project, SecureVault emphasizes industry-standard security practices:
 CSRF Protection: Implemented via Flask-WTF to prevent cross-site request forgery.
 SQL Injection Prevention: All database operations use SQLAlchemy ORM to sanitize inputs.
 Key Derivation: Uses PBKDF2 with 100,000 iterations to derive encryption keys from user passwords.
